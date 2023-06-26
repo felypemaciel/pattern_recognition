@@ -1,5 +1,15 @@
 *.dat
 *.pdf
 *.zip
-src/faces/
-src/voices/
+*.wav
+*.centerlight
+*.glasses
+*.happy
+*.leftlight
+*.noglasses
+*.rightlight
+*.sad
+*.sleepy
+*.surprised
+*.wink
+*.xopp
