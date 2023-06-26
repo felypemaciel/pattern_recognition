@@ -7,9 +7,11 @@
 *.happy
 *.leftlight
 *.noglasses
+*.normal
 *.rightlight
 *.sad
 *.sleepy
 *.surprised
 *.wink
 *.xopp
+
