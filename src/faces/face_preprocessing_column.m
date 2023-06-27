@@ -4,10 +4,6 @@
 % Last modification: 10/08/2021
 % Author: Guilherme Barreto
 
-clear; clc; close all
-
-pkg load image
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fase 1 -- Carrega imagens disponiveis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,7 +20,7 @@ Y=[];  % Matriz que acumula o rotulo (identificador) do individuo
 Z=[];
 NAME=[];
 for i=1:Nind,  % Indice para os individuos
-    individuo=i,
+    
     for j=1:Nexp,   % Indice para expressoes
         if i<10,
             nome = strcat(part1,int2str(i),part4(j,:));    % Monta o nome do arquivo de imagem
@@ -53,11 +49,11 @@ for i=1:Nind,  % Indice para os individuos
 end
 
 %%%%%%%% APLICACAO DE PCA (PCACOV) %%%%%%%%%%%
-[V L VEi]=pcacov(cov(X'));
-q=25; Vq=V(:,1:q); Qq=Vq'; X=Qq*X;
-VEq=cumsum(VEi); figure; plot(VEq,'r-','linewidth',3);
-xlabel('Autovalor');
-ylabel('Variancia explicada acumulada');
+% [V L VEi]=pcacov(cov(X'));
+% q=25; Vq=V(:,1:q); Qq=Vq'; X=Qq*X;
+% VEq=cumsum(VEi); figure; plot(VEq,'r-','linewidth',3);
+% xlabel('Autovalor');
+% ylabel('Variancia explicada acumulada');
 
 Z=[X;Y];  % Formato 01 vetor de atributos por coluna: DIM(Z) = (p+1)xN
 Z=Z';     % Formato 01 vetor de atributos por linha: DIM(Z) = Nx(p+1)
@@ -66,6 +62,3 @@ save -ascii recfaces.dat Z
 
 %save -ascii yale1_input20x20.txt X
 %save -ascii yale1_output20x20.txt Y
-
-
-

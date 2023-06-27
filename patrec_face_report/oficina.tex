@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage[document]{ragged2e}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+\usepackage[margin=2cm]{geometry}
+\allowdisplaybreaks
+\title{\Large \textbf{TÍTULO}}
+\author{Autores}
+\date{\today}
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+% \usepackage[brazil]{babel}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{xcolor,soul}
+\definecolor{cinza}{RGB}{218,248,248}
+\definecolor{vermelho}{RGB}{250,205,205}
+\definecolor{verde}{RGB}{223,250,205}
+\definecolor{roxo}{RGB}{231,190,250}
+\definecolor{amarelo}{RGB}{247,250,190}
+
+
+\sectionfont{\fontsize{14}{15}\selectfont}
+\subsectionfont{\fontsize{12}{15}\selectfont}
+
+\begin{document}
+	\begin{wrapfigure}{l}{1.5cm}
+		\includegraphics[width=\linewidth]{brasao_ufc_mono}
+	\end{wrapfigure}
+
+	\textsc{Universidade Federal do Ceará}
+			
+	\textsc{Departamento de Engenharia de Teleinformática}
+			
+	\textsc{Curso de Graduação em Engenharia de Computação}
+			
+	\textsc{Introdução ao Reconhecimento de Padrões -- TI0097}
+	
+	\hfill
+	
+	\Large{\textsc{Projeto \#1 -- Reconhecimento de Faces}}
+	
+	\normalsize
+	
+	\textsc{Antonio Felype Ferreira Maciel -- 472118}
+	
+	\setstretch{1}
+	
+	\hfill
+		
+	\textbf{Atividade 2}
+	
+	\hfill
+	
+	\begin{tabular}{lcccccc}
+		\hline
+		Classificador & Média & Mínimo & Máximo & Mediana & Desvio Padrão & Tempo de execução \\
+		\hline
+		Quadrático &  99.7000 &  90.0000 & 100.0000 & 100.0000 &   1.7145 &   0.0498 \\
+		Variante 1 &  62.7500 &  42.5000 &  85.0000 &  62.5000 &   9.3102 &   0.0383 \\
+		Variante 2 &  81.0500 &  67.5000 &  92.5000 &  82.5000 &   5.9584 &   0.0375 \\
+		Variante 3 &  86.5750 &  70.0000 & 100.0000 &  87.5000 &   6.2528 &   0.0340 \\
+		Variante 4 &  79.0750 &  67.5000 &  95.0000 &  80.0000 &   4.9321 &   0.0290 \\
+		LinearMQ   &  85.6250 &  70.0000 &  97.5000 &  85.0000 &   5.3226 &   0.0239 \\
+		MaxCorr    &  80.4750 &  62.5000 &  95.0000 &  81.2500 &   6.8598 &   0.0137 \\
+		DMC        &  82.0000 &  65.0000 &  95.0000 &  82.5000 &   6.2260 &   0.0122 \\
+		1-NN       &  99.9000 &  90.0000 & 100.0000 & 100.0000 &   1.0000 &   0.0815 \\
+		\hline
+	\end{tabular}
+	
+	\hfill
+	
+	\textbf{Questão 1}
+	
+	\textbf{Questão 2}
+	
+	\textbf{Questão 3}
+	
+	\hfill
+	
+	\textbf{Atividade 4}
+	
+	\hfill
+	
+	\begin{tabular}{lcccccc}
+		\hline
+		Classificador & Média & Mínimo & Máximo & Mediana & Desvio Padrão & Tempo de execução \\
+		\hline
+		Quadrático &     99.5000 &  90.0000 & 100.0000 & 100.0000 &   2.1904 &  0.0497 \\
+		Variante 1 &     62.1500 &  35.0000 &  85.0000 &  62.5000 &   9.1219 &  0.0636 \\
+		Variante 2 &     80.1250 &  65.0000 &  95.0000 &  80.0000 &   6.0759 &  0.0663 \\
+		Variante 3 &     86.2750 &  72.5000 & 100.0000 &  87.5000 &   5.8549 &  0.0639 \\
+		Variante 4 &     59.7250 &  37.5000 &  82.5000 &  60.0000 &   7.0073 &  0.0490 \\
+		LinearMQ   &     85.1250 &  65.0000 &  95.0000 &  85.0000 &   5.8211 &  0.0587 \\
+		MaxCorr    &     81.8000 &  60.0000 &  97.5000 &  82.5000 &   6.2672 &  0.0147 \\
+		DMC        &     82.0500 &  65.0000 &  95.0000 &  82.5000 &   6.7362 &  0.0219 \\
+		1-NN       &     99.9000 &  90.0000 & 100.0000 & 100.0000 &   1.0000 &  0.1004 \\
+		\hline
+	\end{tabular}
+	
+	\hfill
+	
+	\textbf{Atividade 5}
+	
+	\textbf{Questão 5} -- q = 4.
+	
+	\textbf{Atividade 6}
+	
+	\hfill
+	
+	\begin{tabular}{lcccccc}
+		\hline
+		Classificador & Média & Mínimo & Máximo & Mediana & Desvio Padrão & Tempo de execução \\
+		\hline
+		Quadrático &   91.7250 &  75.0000 & 100.0000 &  92.5000 &   5.1822 &    0.0560 \\
+		Variante 1 &   56.2000 &  37.5000 &  82.5000 &  55.0000 &   8.3898 &    0.0303 \\
+		Variante 2 &   57.3250 &  35.0000 &  75.0000 &  57.5000 &   8.8067 &    0.0489 \\
+		Variante 3 &   62.7500 &  35.0000 &  85.0000 &  62.5000 &   8.2916 &    0.0532 \\
+		Variante 4 &   65.4500 &  45.0000 &  80.0000 &  65.0000 &   7.0207 &    0.0416 \\
+		LinearMQ   &   46.5750 &  27.5000 &  70.0000 &  45.0000 &   8.5329 &    0.0312 \\
+		MaxCorr    &   56.2000 &  40.0000 &  75.0000 &  57.5000 &   7.8615 &    0.0221 \\
+		DMC        &   58.9750 &  32.5000 &  77.5000 &  57.5000 &   7.7858 &    0.0216 \\
+		1-NN       &   99.8000 &  90.0000 & 100.0000 & 100.0000 &   1.4071 &    0.0806 \\
+		\hline
+	\end{tabular}
+	
+	\hfill
+	
+\end{document}

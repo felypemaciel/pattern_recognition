@@ -1,6 +1,6 @@
-function [STATS TX_OK X m S posto]=quadratico(data,Nr,Ptrain)
+function [STATS TX_OK X m S posto]=variante4(data,Nr,Ptrain)
 %
-% Mahalanobis with one COV matrix per class.
+% Mahalanobis with diagonal COV matrix (per class).
 %
 % INPUTS: * data (matrix): dataset matrix (N x (p+1))
 %	  	OBS1: feature vectors along the rows of data matrix
@@ -22,7 +22,6 @@ Ntrn=round(Ptrain*N/100);  % Number of training samples
 Ntst=N-Ntrn; % Number of testing samples
 
 K=max(data(:,end)); % Get the number of classes
-
 ZZ=sprintf('The problem has %d classes',K);
 disp(ZZ);
 
@@ -40,10 +39,11 @@ for r=1:Nr,  % Loop of independent runs
     I=find(Dtrn(:,end)==k);  % Find rows with samples from k-th class
     X{k}=Dtrn(I,1:end-1); % Data samples from k-th class
     m{k}=mean(X{k})';   % Centroid of the k-th class
-    S{k}=cov(X{k}); % Compute the covariance matrix of the k-th class
+    V{k}=var(X{k});     % Vector of variances of the atributes of the k-th class
+    S{k}=diag(V{k}); % Diagonal regularized cov matrix of the k-th class
     posto{k}=rank(S{k}); % Check invertibility of covariance matrix by its rank
-    iS{k}=pinv(S{k});    % Inverse covariance matrix of the k-th class
-    % iS{k}=inv(S{k});    % Inverse covariance matrix of the k-th class
+    %iS{k}=diag(1./V{k}); % Inverse covariance matrix of the k-th class
+    iS{k}=inv(S{k});
   end
 
   % Testing phase
@@ -56,12 +56,12 @@ for r=1:Nr,  % Loop of independent runs
       dist(k)=v'*iS{k}*v;  % Mahalanobis distance to k-th class
     end
     [dummy Pred_class]=min(dist);  % index of the minimum distance class
-
+    
     if Pred_class == Label_Xtst,
         correct=correct+1;
     end
   end
-
+  
   TX_OK(r)=100*correct/Ntst;   % Recognition rate of r-th run
 end
 
