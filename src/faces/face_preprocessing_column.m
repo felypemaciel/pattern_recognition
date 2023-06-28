@@ -48,6 +48,9 @@ for i=1:Nind,  % Indice para os individuos
     end
 end
 
+% BOXCOX TRANSFORMATION
+X = boxcox_transf(X');
+
 %%%%%%%% APLICACAO DE PCA (PCACOV) %%%%%%%%%%%
 % [V L VEi]=pcacov(cov(X'));
 % q=25; Vq=V(:,1:q); Qq=Vq'; X=Qq*X;
