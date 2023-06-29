@@ -49,6 +49,7 @@ for i=1:Nind,  % Indice para os individuos
 end
 
 % BOXCOX TRANSFORMATION
+X = X';
 X = boxcox_maciel(X)';
 
 %%%%%%%% APLICACAO DE PCA (PCACOV) %%%%%%%%%%%

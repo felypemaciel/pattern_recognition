@@ -7,6 +7,7 @@ function newData = boxcox_maciel(data)
     lambdas = zeros(1,c);
 
     for i=1:c
+        min(data(:,i))
         [newData(:,i), lambdas(i)] = boxcox(data(:,i));
     end
 end
