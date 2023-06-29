@@ -1,0 +1,12 @@
+function data = boxcox_maciel(data)
+    data = data';
+
+    [r, c] = size(data);
+
+    newData = zeros(r,c);
+    lambdas = zeros(1,c);
+
+    for i=1:c
+        [newData(:,), lambdas(i)] = boxcox(X(:,i));
+    end
+end

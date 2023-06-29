@@ -29,6 +29,7 @@ STATS_KNN = [STATS_KNN, Tempo_KNN]
 
 TEMPOS = [Tempo0 Tempo1 Tempo2 Tempo3 Tempo4 Tempo5]';
 
+figure;
 boxplot([TX_OK0' TX_OK1' TX_OK2' TX_OK3' TX_OK4' TX_OK5'])
 set(gca (), "xtick", [1 2 3 4 5 6 7 8 9], "xticklabel", {"Quadratico","Variante 1", "Variante 2","Variante 3","Variante 4","MQ"})
 title('Conjunto Coluna');

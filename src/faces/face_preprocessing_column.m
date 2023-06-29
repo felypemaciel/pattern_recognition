@@ -30,7 +30,7 @@ for i=1:Nind,  % Indice para os individuos
 
         Img=imread(nome);  % le imagem
 
-        Ar = imresize(Img,[30 30]);   % (Opcional) Redimensiona imagem
+        Ar = imresize(Img,[20 20]);   % (Opcional) Redimensiona imagem
 
         An=Ar; %An=imnoise(Ar,'gaussian',0,0.005);  % (Opcional) adiciona ruido
 
@@ -49,14 +49,14 @@ for i=1:Nind,  % Indice para os individuos
 end
 
 % BOXCOX TRANSFORMATION
-X = boxcox_transf(X');
+X = boxcox_maciel(X)';
 
 %%%%%%%% APLICACAO DE PCA (PCACOV) %%%%%%%%%%%
-% [V L VEi]=pcacov(cov(X'));
-% q=25; Vq=V(:,1:q); Qq=Vq'; X=Qq*X;
-% VEq=cumsum(VEi); figure; plot(VEq,'r-','linewidth',3);
-% xlabel('Autovalor');
-% ylabel('Variancia explicada acumulada');
+[V L VEi]=pcacov(cov(X'));
+q=40; Vq=V(:,1:q); Qq=Vq'; X=Qq*X;
+VEq=cumsum(VEi); figure; plot(VEq,'r-','linewidth',3);
+xlabel('Autovalor');
+ylabel('Variancia explicada acumulada');
 
 Z=[X;Y];  % Formato 01 vetor de atributos por coluna: DIM(Z) = (p+1)xN
 Z=Z';     % Formato 01 vetor de atributos por linha: DIM(Z) = Nx(p+1)
