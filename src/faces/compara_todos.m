@@ -27,7 +27,7 @@ STATS_DMC = [STATS_DMC, Tempo_DMC]
 STATS_KNN = [STATS_KNN, Tempo_KNN]
 
 
-TEMPOS = [Tempo0 Tempo1 Tempo2 Tempo3 Tempo4 Tempo5]';
+TEMPOS = [Tempo0 Tempo1 Tempo2 Tempo3 Tempo4 Tempo5 Tempo_MC Tempo_DMC Tempo_KNN]';
 
 figure;
 boxplot([TX_OK0' TX_OK1' TX_OK2' TX_OK3' TX_OK4' TX_OK5'])

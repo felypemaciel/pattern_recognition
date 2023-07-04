@@ -16,17 +16,19 @@ tic; [st_dmc TX_OK6 X6] = DMC_fm(D, Nr, Ptrain); tdmc = toc;
 tic; [st_knn TX_OK7 X7] = KNN(D, Nr, Ptrain); tknn = toc;
 tic; [st_max_corr TX_OK7 X7] = max_corr(D, Nr, Ptrain); tmaxcorr = toc;
 
-st_quadratic
-st_quadratic_v1
-st_quadratic_v2
-st_quadratic_v3
-st_quadratic_v4
-st_linear_mq
-st_max_corr
-st_dmc
-st_knn
+st_quadratic        = [st_quadratic, tquad]
+st_quadratic_v1     = [st_quadratic_v1, tquadv1]
+st_quadratic_v2     = [st_quadratic_v2, tquadv2]
+st_quadratic_v3     = [st_quadratic_v3, tquadv3]
+st_quadratic_v4     = [st_quadratic_v4, tquadv4]
+st_linear_mq        = [st_linear_mq, tlinearmq]
+st_max_corr         = [st_max_corr, tmaxcorr]
+st_dmc              = [st_dmc, tdmc]
+st_knn              = [st_knn, tknn]
 
-TEMPOS=[tquad tquadv1 tquadv2 tquadv3 tquadv4 tlinearmq tmaxcorr tdmc tknn]'
+TEMPOS=[tquad tquadv1 tquadv2 tquadv3 tquadv4 tlinearmq tmaxcorr tdmc tknn]';
+
+
 
 boxplot([TX_OK0' TX_OK1' TX_OK2' TX_OK3' TX_OK4' TX_OK5'])
 set(gca (), "xtick", [1 2 3 4 5 6 7 8 9], "xticklabel", {"Quadratico","Variante 1", "Variante 2","Variante 3","Variante 4","MQ"})

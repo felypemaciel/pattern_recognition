@@ -49,7 +49,6 @@ for i=1:Nind,  % Indice para os individuos
 end
 
 % BOXCOX TRANSFORMATION
-% X = X' + 1;
 [min(X)' max(X)']
 X = boxcox_maciel(X);
 

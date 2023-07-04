@@ -7,14 +7,16 @@ close all
 % X = data(:,1:end-1)';
 % Y = data(:,end);
 
-x = X(:,50);
-lamb = 125;
+x = X(:,2);
+lamb = 50;
 xstar = (x.^lamb - 1)/lamb;
 figure; 
 
 mxstar = mean(xstar);
 dpxstar = std(xstar);
-xnorm = normrnd(mxstar, dpxstar, 5000, 1);
+xnorm = normrnd(mxstar, dpxstar, 400, 1);
+
+e = sqrt(xstar - xnorm);
 
 subplot(2,1,1);
 histfit(xstar);
@@ -22,3 +24,5 @@ subplot(2,1,2);
 cdfplot(xstar);
 hold on;
 cdfplot(xnorm);
+
+y = cdf('normal',xnorm);
