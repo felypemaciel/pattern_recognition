@@ -1,14 +1,14 @@
 close all
 
-% data = load("recfaces.dat");
-% 
-% size(data)
+data = load("recfaces.dat");
 
-% X = data(:,1:end-1)';
-% Y = data(:,end);
+size(data)
 
-x = X(:,50);
-lamb = 125;
+X = data(:,1:end-1)';
+Y = data(:,end);
+
+x = X(:,4);
+lamb = 0.05;
 xstar = (x.^lamb - 1)/lamb;
 figure; 
 
@@ -22,3 +22,4 @@ subplot(2,1,2);
 cdfplot(xstar);
 hold on;
 cdfplot(xnorm);
+title("\lambda = ", num2str(lamb))
