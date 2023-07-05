@@ -29,7 +29,7 @@ st_knn              = [st_knn, tknn]
 TEMPOS=[tquad tquadv1 tquadv2 tquadv3 tquadv4 tlinearmq tmaxcorr tdmc tknn]';
 
 
-
+figure
 boxplot([TX_OK0' TX_OK1' TX_OK2' TX_OK3' TX_OK4' TX_OK5'])
 set(gca (), "xtick", [1 2 3 4 5 6 7 8 9], "xticklabel", {"Quadratico","Variante 1", "Variante 2","Variante 3","Variante 4","MQ"})
 title('Conjunto Escolhido');

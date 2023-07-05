@@ -16,15 +16,15 @@ tic; [STATS_MC, TX_OK_MC, W_MC] = max_corr(D,Nr, Ptrain); Tempo_MC = toc;
 tic; [STATS_DMC, TX_OK_DMC, W_DMC] = DMC_fm(D,Nr, Ptrain); Tempo_DMC = toc;
 tic; [STATS_KNN, TX_OK_KNN, W_KNN] = KNN(D,Nr, Ptrain); Tempo_KNN = toc;
 
-% STATS_0 = [STATS_0, Tempo0]
-% STATS_1 = [STATS_1, Tempo1]
-% STATS_2 = [STATS_2, Tempo2]
-% STATS_3 = [STATS_3, Tempo3]
-% STATS_4 = [STATS_4, Tempo4]
-% STATS_5 = [STATS_5, Tempo5]
-% STATS_MC = [STATS_MC, Tempo_MC]
-% STATS_DMC = [STATS_DMC, Tempo_DMC]
-% STATS_KNN = [STATS_KNN, Tempo_KNN]
+STATS_0 = [STATS_0, Tempo0]
+STATS_1 = [STATS_1, Tempo1]
+STATS_2 = [STATS_2, Tempo2]
+STATS_3 = [STATS_3, Tempo3]
+STATS_4 = [STATS_4, Tempo4]
+STATS_5 = [STATS_5, Tempo5]
+STATS_MC = [STATS_MC, Tempo_MC]
+STATS_DMC = [STATS_DMC, Tempo_DMC]
+STATS_KNN = [STATS_KNN, Tempo_KNN]
 
 [STATS_0(1); STATS_1(1); STATS_2(1); STATS_3(1); STATS_4(1); STATS_5(1); 
     STATS_MC(1); STATS_DMC(1); STATS_KNN(1)]

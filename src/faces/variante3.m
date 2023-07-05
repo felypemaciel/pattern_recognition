@@ -52,7 +52,7 @@ for r=1:Nr,  % Loop of independent runs
   b=lamb;
   for k=1:K,
     Cfried{k} = (a*S{k}+b*Spool)/(a*n{k}+b*Ntrn);
-    iCfried{k}=inv(Cfried{k});  % inverse of Cfried{k}
+    iCfried{k} = pinv(Cfried{k});  % inverse of Cfried{k}
   end
   
 

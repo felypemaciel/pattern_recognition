@@ -1,26 +1,27 @@
-close all
+% close all
 
 data = load("recfaces.dat");
 
 X = data(:,1:end-1)';
 Y = data(:,end);
 
-x = X(:,4);
-lamb = 0.25;
-xstar = (x.^lamb - 1)/lamb; 
+size(data)
+
+size()
+x = X(:,1)
+lamb = -0.3;
+xstar = (x.^lamb - 1)/lamb;
+figure; 
 
 mxstar = mean(xstar);
 dpxstar = std(xstar);
 xnorm = normrnd(mxstar, dpxstar, 5000, 1);
 
-% subplot(1,2,1);
-figure;
+subplot(1,2,1);
 histfit(xstar);
 title('Histograma de um dos atributos do conjunto')
-% subplot(1,2,2);
-
-figure;
+subplot(1,2,2);
 cdfplot(xstar);
 hold on;
-cdfplot(xnorm)
-title("Comparação das CDF para \lambda = 0.25")
+cdfplot(xnorm);
+title("Comparação das CDF para \lambda = -0.3")

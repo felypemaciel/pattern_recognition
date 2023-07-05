@@ -43,7 +43,7 @@ for r=1:Nr,  % Loop of independent runs
     S{k}=diag(V{k}); % Diagonal regularized cov matrix of the k-th class
     posto{k}=rank(S{k}); % Check invertibility of covariance matrix by its rank
     %iS{k}=diag(1./V{k}); % Inverse covariance matrix of the k-th class
-    iS{k}=inv(S{k});
+    iS{k}=pinv(S{k});
   end
 
   % Testing phase

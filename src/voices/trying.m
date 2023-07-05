@@ -1,12 +1,12 @@
 close all
 
-data = load("recfaces.dat");
+data = load("recvoz.dat");
 
 X = data(:,1:end-1)';
 Y = data(:,end);
 
 x = X(:,4);
-lamb = 0.25;
+lamb = 0.06;
 xstar = (x.^lamb - 1)/lamb; 
 
 mxstar = mean(xstar);
@@ -23,4 +23,4 @@ figure;
 cdfplot(xstar);
 hold on;
 cdfplot(xnorm)
-title("Comparação das CDF para \lambda = 0.25")
+title("Comparação das CDF para \lambda = 0.06")

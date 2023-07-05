@@ -53,8 +53,10 @@ end
 % size(X)
 % X = boxcox_maciel(X);
 
-lamb = 1;
+lamb = 0.25;
 X = (X.^lamb - 1)/lamb;
+
+size(X)
 
 
 %%%%%%%% APLICACAO DE PCA (PCACOV) %%%%%%%%%%%
